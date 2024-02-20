@@ -25,18 +25,10 @@
 			<img id="profile_img" src="/<%= id %>/profile.png" alt="profile">
 		</div>
 		<!-- Banner end -->
-		<h1 id="info_title">My Profile</h1>
+		<h1 id="info_title"><%= title[0] %></h1>
 		<div class="info">
 			<div id="info_left">
-				<p>
-					Many a programmer have heard of
-					<a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">Rubber Duck Debugging</a>.
-					But they do not know the invincible power of a Debug Dog.
-				</p>
-				<p>
-						<a href= "https://en.wikipedia.org/wiki/Dog">Dogs</a> are known in many cultures as men and women's best friends. Most cultures rate these mythical creatures as above average intelligence, making them especially
-						good at helping to debug those tough problems in your code.
-				</p>
+				<%- title[1] %>
 				<div id="mickey_info">
 					<div class="parameter_titles">
 						<p class="parameters">

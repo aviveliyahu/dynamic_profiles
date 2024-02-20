@@ -8,14 +8,18 @@ let fs = require("fs");
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// set the public file folder to public
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/profile', function(req, res) {
+  // get ID entered by user
   let id = req.query.id;
-    // use res.render to load up an ejs view file
-  res.render('profile', {id});
-  console.log(`User enterd id: ${id}`);
+
+  // get right title & short description by ID
+  let title_file = fs.readFileSync(`private/${id}/title.txt`,'utf-8');
+  let title = title_file.split("\n");
+  
+  // use res.render to load up an ejs view file with the right parameters
+  res.render('profile', {id,title});
 });
 
 app.listen(PORT);
