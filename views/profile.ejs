@@ -1,4 +1,4 @@
-<!-- HTML file of Ex2 by Aviv Yonathan Eliyahu and Matan Asraf -->
+<!-- HTML file by Aviv Yonathan Eliyahu and Matan Asraf -->
 <!DOCTYPE html>
 <html lang = "en">
 
@@ -12,10 +12,11 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Rammetto+One&display=swap" rel="stylesheet">
     <link href="profile.css" rel="stylesheet">
-	<title>My&nbsp;Profile</title>
+	<title>My Profile</title>
 </head>
+
 <body>
-	<div class="container">  
+	<div class="container">
 		<!-- Banner start -->
 		<div class="profile">
 			<div class="banner">
@@ -24,7 +25,7 @@
 			<img id="profile_img" src="/<%= id %>/profile.png" alt="profile">
 		</div>
 		<!-- Banner end -->
-		<h1 id="info_title"><%- title_lines[0] %></h1>
+		<h1 id="info_title"><%- title_lines[0]%></h1>
 		<div class="info">
 			<div id="info_left">
 				<p>
@@ -46,50 +47,22 @@
 			<div id="info_right">
 				<img id="info_img" src="/<%= id %>/image1.png" alt="info_image">
 			</div>
-	    </div>
 		</div>
 		<div class="endorsement">
 			<div id="end_right">
 				<h2 id="end_title"> Endorsement</h2>
-				<div class="end_box">
-					<p>  
-					<!--I remember the first time I met Mickey the Debug Dog.  
-						Mickey looked so fierce as they stared at the code with me. I slowly explained
-						everything and they listened to my every word.
-						The pauses were uncomfortable, but then I SAW it. I saw the error. Mickey
-						saved me hours of anguish. -->	
-					</p>
-					<hr class="seperator">
-					<span ><!-- Sofia H, AP CS student. --> </span>
-				</div>
-				<div class="end_box">
-					<p>
-					<!--Mickey KNOWS THE WAE Mickey -->	</span>
-					</p>
-					<hr class="seperator">
-					<span class="name"> <!-- Manesh J, Software Engineer, Imaginarium.-->  </span>
-				</div>
-				<div class="end_box">
-					<p> 
-					<!-- Mickey has been an amazing help to me, someone who listens to every problem and is never judgemental.-->  
-					</p>
-					<hr class="seperator">
-					<span class="name"><!--Chris L, Programming Club Participant.-->  </span>
-				</div>
-				<div class="end_box">
-					<p> 
-					<!-- 	Mickey helped me to write my first website! it was challenging but very educational. --> 
-					</p>
-					<hr class="seperator">
-					<span class="name"><!--Aviv Yonathan Eliyahu-->  </span>
-				</div>
-				<div class="end_box">
-					<p> 
-		<!-- From Miki I learned to design a very professional website, on the other hand it is comfortable and easy to read --> </p>
-					<hr class="seperator">
-					<span class="name"><!--Matan Asraf--> </span>
-				</div>		
-			</div>   
+				<% for (file of endorsement_files) { %>
+					<div class="end_box">
+						<p>
+							<%- file.split("\n")[0] %>
+						</p>
+						<hr class="seperator">
+						<span >
+							<%- file.split("\n")[1] %>
+						</span>
+					</div> 
+				<% } %>
+			</div>
 			<div id="end_left">
 				<img id="end_img" src="/<%= id %>/image2.png" alt="endorsement_img">
 			</div>

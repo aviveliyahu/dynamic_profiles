@@ -143,6 +143,12 @@ body{
     flex-direction: column;
 }
 
+#friends_bottom{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .friends_img{
     padding: 10px;
     height: 300px;
