@@ -25,20 +25,20 @@
 			<img id="profile_img" src="/<%= id %>/profile.png" alt="profile">
 		</div>
 		<!-- Banner end -->
-		<h1 id="info_title"><%- title_lines[0]%></h1>
+		<h1 id="info_title"><%- title_lines[0];%></h1>
 		<div class="info">
 			<div id="info_left">
 				<p>
-					<%- title_lines[1]%>
+					<%- title_lines[1];%>
 				</p>
 				<div id="mickey_info">
 					<% for (line of bio_lines) { %> 
 						<div class="parameter_titles">
 							<p class="parameters">
-								<%- line.split(":")[0] %>
+								<%- line.split(":")[0]; %>
 							</p>
 							<p class="answers">
-								<%- line.split(":").slice(1)%>
+								<%- line.split(":").slice(1).join(":");%>
 							</p>
 						</div> 
 					<% } %>
@@ -54,11 +54,11 @@
 				<% for (file of endorsement_files) { %>
 					<div class="end_box">
 						<p>
-							<%- file.split("\n")[0] %>
+							<%- file.split("\n")[0]; %>
 						</p>
 						<hr class="seperator">
 						<span >
-							<%- file.split("\n")[1] %>
+							<%- file.split("\n")[1]; %>
 						</span>
 					</div> 
 				<% } %>
